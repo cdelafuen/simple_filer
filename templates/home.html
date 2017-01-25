@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fichajes Simples</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Fichajes Simples</h1>
+        <p>Llevas trabajado: {{ current_hours }} Horas y {{ current_minutes }} Minutos</p>
+        {% if day_finished %}
+            <p><form method="post">
+            {% csrf_token %}
+                 <button type="submit">
+                     Comenzar Fichaje
+                 </button>
+            </form></p>
+        {% else %}
+            Terminar Fichaje
+        {% endif %}
+    </div>
+</body>
+</html>
